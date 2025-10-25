@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Galería de Dibujos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Mi Galería de Dibujos</h1>
+    </header>
+
+    <!-- Sección de categorías -->
+    <section class="categories">
+        <div class="category" data-gallery="anime">Anime</div>
+        <div class="category" data-gallery="videojuegos">Videojuegos</div>
+        <div class="category" data-gallery="otros">Otros</div>
+    </section>
+
+    <!-- Galería Anime -->
+    <section class="gallery-section" id="anime" style="display: none;">
+        <button class="back-btn">← Volver</button>
+        <h2>Anime</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="images/anime1.jpg" alt="Anime 1">
+                <p>Anime 1</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/anime2.jpg" alt="Anime 2">
+                <p>Anime 2</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería Videojuegos -->
+    <section class="gallery-section" id="videojuegos" style="display: none;">
+        <button class="back-btn">← Volver</button>
+        <h2>Videojuegos</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="Games/Lies of P.png" alt="Game 1">
+                <p>Game 1</p>
+            </div>
+            <div class="gallery-item">
+                <img src="Games/SOUL REAVER.jpg" alt="Game 2">
+                <p>Game 2</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería Otros -->
+    <section class="gallery-section" id="otros" style="display: none;">
+        <button class="back-btn">← Volver</button>
+        <h2>Otros</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="images/otro1.jpg" alt="Otro 1">
+                <p>Otro 1</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para ampliar imagen -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <button id="resetZoom" class="reset-btn">Reestablecer Zoom</button>
+        <div class="modal-content-container">
+            <img class="modal-content" id="modalImage">
+        </div>
+        <div id="caption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

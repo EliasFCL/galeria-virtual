@@ -1,71 +1,64 @@
+/* --- Estilo base --- */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #f8f8f8;
-    color: #333;
+    padding: 0;
+    background-color: #f4f4f4;
     text-align: center;
 }
 
 header {
-    background-color: #222;
+    background-color: #333;
     color: white;
-    padding: 21px;
+    padding: 15px 0;
 }
 
 h1 {
     margin: 0;
+    font-size: 2em;
 }
 
-/* --- Categorías --- */
+/* --- Sección de categorías --- */
 .categories {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 40px;
-    margin-top: 40px;
+    gap: 20px;
     flex-wrap: wrap;
+    padding: 20px;
 }
 
 .category {
-    background-color: #444;
-    color: white;
-    padding: 60px 80px;
-    border-radius: 15px;
-    font-size: 24px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    padding: 20px;
+    width: 200px;
     cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
 }
 
 .category:hover {
-    background-color: #666;
     transform: scale(1.05);
 }
 
-/* --- Galerías --- */
-.gallery-section {
-    margin: 40px auto;
-    max-width: 900px;
-}
-
-h2 {
-    margin-bottom: 20px;
-}
-
+/* --- Galería de dibujos --- */
 .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
+    padding: 20px;
 }
 
 .gallery-item {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    padding: 10px;
     width: 250px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
     cursor: pointer;
-    transition: transform 0.3s;
 }
 
 .gallery-item:hover {
@@ -74,92 +67,80 @@ h2 {
 
 .gallery-item img {
     width: 100%;
-    border-radius: 8px;
+    height: auto;
+    border-radius: 8px 8px 0 0;
 }
 
 .gallery-item p {
-    margin-top: 10px;
-    font-size: 16px;
+    margin: 10px 0;
 }
 
-/* --- Botón Volver --- */
-.back-btn {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.back-btn:hover {
-    background-color: #555;
-}
-
-/* --- Modal (imagen ampliada + zoom) --- */
-.modal {
+/* --- Lightbox (zoom de imagen) --- */
+.lightbox {
     display: none;
     position: fixed;
-    z-index: 10;
-    padding-top: 80px;
-    left: 0;
+    z-index: 9999;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.9);
-    overflow: hidden;
-}
-
-.modal-content-container {
-    display: flex;
+    background: rgba(0, 0, 0, 0.9);
     justify-content: center;
     align-items: center;
-    height: 100%;
-    overflow: hidden;
 }
 
-.modal-content {
-    transition: transform 0.3s ease;
+.lightbox.show {
+    display: flex;
+}
+
+.lightbox-img {
     max-width: 90%;
-    max-height: 90%;
+    max-height: 80%;
     border-radius: 10px;
-    cursor: grab;
-}
-
-#caption {
-    color: #ccc;
-    text-align: center;
-    padding: 10px;
 }
 
 .close {
     position: absolute;
     top: 30px;
-    right: 50px;
-    color: #fff;
+    right: 40px;
+    color: white;
     font-size: 40px;
     cursor: pointer;
 }
 
-/* --- Botón Reestablecer Zoom --- */
-.reset-btn {
-    position: absolute;
-    top: 30px;
-    left: 50px;
-    background-color: #555;
-    color: white;
-    border: none;
+/* --- Botones --- */
+button {
+    margin: 20px;
     padding: 10px 15px;
+    font-size: 16px;
     border-radius: 8px;
+    border: none;
     cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s;
-    z-index: 20;
+    background-color: #333;
+    color: white;
 }
 
-.reset-btn:hover {
-    background-color: #777;
+button:hover {
+    background-color: #555;
+}
+
+/* --- Adaptación para pantallas pequeñas --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .category {
+        width: 90%;
+        font-size: 1.2em;
+    }
+
+    .gallery-item {
+        width: 90%;
+    }
+
+    .lightbox-img {
+        max-width: 95%;
+        max-height: 85%;
+    }
 }

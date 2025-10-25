@@ -1,4 +1,4 @@
-// --- Mostrar y ocultar galerías ---
+//Mostrar y ocultar galerías
 const categoriesSection = document.querySelector('.categories');
 const categories = document.querySelectorAll('.category');
 const galleries = document.querySelectorAll('.gallery-section');
